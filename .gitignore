@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.Desktop.ini
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+yarn-error.log
+
+# Electron Builder
+*.blockmap
+
+# Env / secrets
+.env
+.env.*

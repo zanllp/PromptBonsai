@@ -1,0 +1,88 @@
+@import './glass.css';
+
+:root {
+  /* Colors */
+  --color-primary: #1856FF;
+  --color-secondary: #3A344E;
+  --color-success: #07CA6B;
+  --color-warning: #E89558;
+  --color-danger: #EA2143;
+  --color-surface: #FFFFFF;
+  --color-text: #141414;
+  --color-text-secondary: #6b7280;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-light: rgba(255, 255, 255, 0.60);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.80);
+  --glass-bg-dark: rgba(10, 10, 30, 0.60);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-blur-light: 12px;
+  --glass-blur-medium: 20px;
+  --glass-blur-heavy: 24px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --glass-radius: 16px;
+  --glass-radius-sm: 12px;
+
+  /* Typography */
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --editor-panel-width: 380px;
+  --toolbar-height: 56px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.35s ease;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 40%, #0d1b2a 70%, #1a0a2e 100%);
+  min-height: 100vh;
+}
+
+/* Scrollbar styling for glass panels */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(24, 86, 255, 0.3);
+  color: white;
+}

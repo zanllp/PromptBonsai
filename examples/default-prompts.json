@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "name": "PromptBonsai Examples — Image Generation",
+  "nodes": {
+    "root-portrait": {
+      "id": "root-portrait",
+      "parentId": null,
+      "childrenIds": [
+        "v-portrait-rembrandt",
+        "v-portrait-cinematic",
+        "v-portrait-watercolor",
+        "v-portrait-anime"
+      ],
+      "title": "Portrait Photography — Base Prompt",
+      "promptText": "A young woman with short black hair, wearing a white linen shirt, standing in front of a window with soft natural light. Shallow depth of field, 85mm lens, f/1.4, looking directly at the camera with a calm expression.",
+      "description": "Base portrait prompt — branching into different art styles and lighting setups.",
+      "tags": [
+        {
+          "name": "portrait",
+          "color": "#1856FF"
+        },
+        {
+          "name": "photography",
+          "color": "#07CA6B"
+        }
+      ],
+      "position": {
+        "x": 390,
+        "y": 80
+      },
+      "createdAt": "2026-05-05T10:00:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "v-portrait-rembrandt": {
+      "id": "v-portrait-rembrandt",
+      "parentId": "root-portrait",
+      "childrenIds": [],
+      "title": "Style: Rembrandt Lighting",
+      "promptText": "A young woman with short black hair, wearing a white linen shirt, Rembrandt lighting setup, single key light from upper left, deep shadows on the right cheek creating the classic triangle of light. Dark moody background, oil painting texture, chiaroscuro effect, inspired by Dutch Golden Age portraits, 85mm lens, f/1.8.",
+      "description": "Rembrandt lighting with classic painting aesthetic.",
+      "tags": [
+        {
+          "name": "rembrandt",
+          "color": "#E89558"
+        },
+        {
+          "name": "oil-painting",
+          "color": "#8B5CF6"
+        }
+      ],
+      "position": {
+        "x": 80,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:01:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "v-portrait-cinematic": {
+      "id": "v-portrait-cinematic",
+      "parentId": "root-portrait",
+      "childrenIds": [],
+      "title": "Style: Cinematic Film Look",
+      "promptText": "A young woman with short black hair, wearing a white linen shirt, cinematic film still aesthetic, anamorphic lens flare, teal and orange color grading, shallow depth of field with bokeh city lights in background, dramatic side lighting, shot on ARRI Alexa, 35mm film grain, Wong Kar-wai inspired mood.",
+      "description": "Cinematic color grading and film grain texture.",
+      "tags": [
+        {
+          "name": "cinematic",
+          "color": "#06B6D4"
+        },
+        {
+          "name": "film",
+          "color": "#EC4899"
+        }
+      ],
+      "position": {
+        "x": 390,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:02:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "v-portrait-watercolor": {
+      "id": "v-portrait-watercolor",
+      "parentId": "root-portrait",
+      "childrenIds": [],
+      "title": "Style: Watercolor Illustration",
+      "promptText": "A young woman with short black hair, wearing a white linen shirt, soft watercolor illustration style, wet-on-wet technique, delicate color bleeding at edges, muted pastel palette, visible paper texture, loose brushstrokes, botanical garden background with soft greenery, Studio Ghibli meets traditional Chinese ink wash.",
+      "description": "Watercolor illustration with East-meets-West aesthetic.",
+      "tags": [
+        {
+          "name": "watercolor",
+          "color": "#F59E0B"
+        },
+        {
+          "name": "illustration",
+          "color": "#07CA6B"
+        }
+      ],
+      "position": {
+        "x": 700,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:03:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "v-portrait-anime": {
+      "id": "v-portrait-anime",
+      "parentId": "root-portrait",
+      "childrenIds": [],
+      "title": "Style: Anime Key Visual",
+      "promptText": "A young woman with short black hair, wearing a white linen shirt, anime key visual style, cel-shaded, clean lineart, vibrant colors, detailed eyes with light reflections, cherry blossom petals falling in foreground, soft gradient sky background, Kyoto Animation quality, 4K desktop wallpaper composition.",
+      "description": "Anime KV style with cherry blossom motif.",
+      "tags": [
+        {
+          "name": "anime",
+          "color": "#EC4899"
+        },
+        {
+          "name": "kv",
+          "color": "#EA2143"
+        }
+      ],
+      "position": {
+        "x": 390,
+        "y": 480
+      },
+      "createdAt": "2026-05-05T10:04:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "root-product": {
+      "id": "root-product",
+      "parentId": null,
+      "childrenIds": [
+        "v-pro-minimal",
+        "v-pro-lifestyle",
+        "v-pro-splash"
+      ],
+      "title": "Product Shot — Wireless Earbuds",
+      "promptText": "Wireless earbuds charging case, matte black finish, centered composition, clean white background, studio product photography, shsarp focus, professional lighting.",
+      "description": "Base product shot — different presentation styles for e-commerce and marketing.",
+      "tags": [
+        {
+          "name": "product",
+          "color": "#1856FF"
+        },
+        {
+          "name": "earbuds",
+          "color": "#3178C6"
+        }
+      ],
+      "position": {
+        "x": 1360,
+        "y": -32
+      },
+      "createdAt": "2026-05-05T10:10:00.000Z",
+      "updatedAt": "2026-05-05T14:48:42.186Z",
+      "rating": 3
+    },
+    "v-pro-minimal": {
+      "id": "v-pro-minimal",
+      "parentId": "root-product",
+      "childrenIds": [],
+      "title": "Layout: Apple-Style Minimal",
+      "promptText": "Wireless earbuds charging case, matte black finish, Apple product photography style, floating at 30-degree angle with subtle shadow below, pure white infinite background, soft diffused overhead lighting, extremely sharp detail, slight reflection on surface, minimal and clean, premium feel.",
+      "description": "Apple-style hero product shot for landing pages.",
+      "tags": [
+        {
+          "name": "minimal",
+          "color": "#6b7280"
+        },
+        {
+          "name": "apple",
+          "color": "#1856FF"
+        }
+      ],
+      "position": {
+        "x": 1040,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:11:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "v-pro-lifestyle": {
+      "id": "v-pro-lifestyle",
+      "parentId": "root-product",
+      "childrenIds": [],
+      "title": "Layout: Lifestyle Scene",
+      "promptText": "Wireless earbuds charging case, matte black finish, sitting on a wooden desk next to a steaming coffee cup and an open MacBook, warm morning sunlight streaming through window blinds, cozy home office setting, shalow depth of field, lifestyle photography, Instagram aesthetic, color temperature 4500K.",
+      "description": "Lifestyle scene for social media and ads.",
+      "tags": [
+        {
+          "name": "lifestyle",
+          "color": "#E89558"
+        },
+        {
+          "name": "social",
+          "color": "#EC4899"
+        }
+      ],
+      "position": {
+        "x": 1350,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:12:00.000Z",
+      "updatedAt": "2026-05-05T14:48:34.840Z",
+      "rating": 4
+    },
+    "v-pro-splash": {
+      "id": "v-pro-splash",
+      "parentId": "root-product",
+      "childrenIds": [],
+      "title": "Layout: Splash / Hero Art",
+      "promptText": "Wireless earbuds charging case, matte black finish, dynamic splash photography, water droplets frozen in mid-air around the product, high-speed flash, dark gradient background transitioning from deep navy to black, dramatic rim lighting with blue and purple edge highlights, 3D render quality, motion blur on water, hyper-detailed.",
+      "description": "Dramatic splash art for hero banners and posters.",
+      "tags": [
+        {
+          "name": "splash",
+          "color": "#06B6D4"
+        },
+        {
+          "name": "dramatic",
+          "color": "#8B5CF6"
+        }
+      ],
+      "position": {
+        "x": 1195,
+        "y": 480
+      },
+      "createdAt": "2026-05-05T10:13:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "root-landscape": {
+      "id": "root-landscape",
+      "parentId": null,
+      "childrenIds": [
+        "v-land-sunset",
+        "v-land-cyberpunk",
+        "v-land-studio-ghibli",
+        "v-land-lowpoly"
+      ],
+      "title": "Landscape — Mountain Lake Scene",
+      "promptText": "A serene mountain lake at dawn, snow-capped peaks reflected in crystal clear water, pine trees lining the shore, morning mist rising from the water surface, ultra-wide angle, panoramic composition.",
+      "description": "Base landscape prompt — exploring different artistic interpretations of the same scene.",
+      "tags": [
+        {
+          "name": "landscape",
+          "color": "#07CA6B"
+        },
+        {
+          "name": "nature",
+          "color": "#1856FF"
+        }
+      ],
+      "position": {
+        "x": 2000,
+        "y": 80
+      },
+      "createdAt": "2026-05-05T10:20:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 3
+    },
+    "v-land-sunset": {
+      "id": "v-land-sunset",
+      "parentId": "root-landscape",
+      "childrenIds": [],
+      "title": "Mood: Golden Hour Photography",
+      "promptText": "A serene mountain lake at golden hour, snow-capped peaks catching warm alpine glow, crystal clear water reflecting vibrant orange and pink sky, pine trees as dark silhouettes, morning mist with god rays breaking through clouds, ultra-wide panoramic shot at f/11, National Geographic quality landscape photography, shot on Sony A7R IV.",
+      "description": "Photorealistic golden hour with dramatic god rays.",
+      "tags": [
+        {
+          "name": "golden-hour",
+          "color": "#F59E0B"
+        },
+        {
+          "name": "photography",
+          "color": "#07CA6B"
+        }
+      ],
+      "position": {
+        "x": 1690,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:21:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "v-land-cyberpunk": {
+      "id": "v-land-cyberpunk",
+      "parentsId": null,
+      "childrenIds": [],
+      "title": "Mood: Cyberpunk Reimagination",
+      "promptText": "A cyberpunk mountain lake, snow-capped peaks are jagged megastructures with glowing neon windows, lake water is dark and reflective like obsidian, holographic signs floating above the pine forest that has been replaced by metallic tower trees, toxic green and magenta fog rolling across the water, flying vehicles in the distance, Blade Runner meets nature, hyper-detailed concept art, 8K.",
+      "description": "Cyberpunk reimagining — nature overtaken by technology.",
+      "tags": [
+        {
+          "name": "cyberpunk",
+          "color": "#EA2143"
+        },
+        {
+          "name": "concept-art",
+          "color": "#8B5CF6"
+        }
+      ],
+      "position": {
+        "x": 2000,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:22:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "v-land-studio-ghibli": {
+      "id": "v-land-studio-ghibli",
+      "parentId": "root-landscape",
+      "childrenIds": [],
+      "title": "Mood: Studio Ghibli Animation",
+      "promptText": "A serene mountain lake at dawn, hand-painted animation style, Studio Ghibli aesthetic, soft rounded shapes, lush green pine trees with detailed leaf clusters, crystal clear turquoise water, fluffy cumulonimbus clouds, a small wooden boat with a lantern gently floating on the lake, warm and peaceful atmosphere, Hayao Miyazaki inspired, anime background art, layered parallax depth.",
+      "description": "Ghibli-style animation background with storytelling elements.",
+      "tags": [
+        {
+          "name": "ghibli",
+          "color": "#07CA6B"
+        },
+        {
+          "name": "anime",
+          "color": "#EC4899"
+        }
+      ],
+      "position": {
+        "x": 2310,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:23:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    },
+    "v-land-lowpoly": {
+      "id": "v-land-lowpoly",
+      "parentId": "root-landscape",
+      "childrenIds": [],
+      "title": "Mood: Low-Poly 3D Art",
+      "promptText": "A serene mountain lake scene in low-poly 3D art style, geometric faceted mountains with gradient snow caps, crystal clear water made of angular planes with subtle reflections, stylized low-poly pine trees in various green shades, isometric perspective, soft ambient occlusion, pastel color palette, clean 3D render, Unity asset store quality, gentle rim lighting.",
+      "description": "Low-poly geometric art style with pastel colors.",
+      "tags": [
+        {
+          "name": "low-poly",
+          "color": "#06B6D4"
+        },
+        {
+          "name": "3d-art",
+          "color": "#1856FF"
+        }
+      ],
+      "position": {
+        "x": 2000,
+        "y": 480
+      },
+      "createdAt": "2026-05-05T10:24:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "root-character": {
+      "id": "root-character",
+      "parentId": null,
+      "childrenIds": [
+        "v-char-turnaround",
+        "v-char-expression",
+        "v-char-outfit"
+      ],
+      "title": "Character Design — Fantasy Archer",
+      "promptText": "Character design sheet, female fantasy archer, athletic build, long braided brown hair with feathers, leather armor with elven detailing, carrying a recurve bow, forest elf aesthetic.",
+      "description": "Base character design — exploring different presentation formats.",
+      "tags": [
+        {
+          "name": "character",
+          "color": "#8B5CF6"
+        },
+        {
+          "name": "fantasy",
+          "color": "#1856FF"
+        }
+      ],
+      "position": {
+        "x": 2805,
+        "y": 80
+      },
+      "createdAt": "2026-05-05T10:30:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 3
+    },
+    "v-char-turnaround": {
+      "id": "v-char-turnaround",
+      "parentId": "root-character",
+      "childrenIds": [],
+      "title": "Format: Character Turnaround Sheet",
+      "promptText": "Character turnaround sheet, female fantasy archer, athletic build, long braided brown hair with feathers, leather armor with elven detailing, recurve bow. Full body front view, 3/4 view, side view, and back view. Clean white background, consistent proportions, flat colors with minimal shading, concept art reference sheet layout, annotation-ready spacing.",
+      "description": "Standard turnaround reference sheet for 3D modeling or animation.",
+      "tags": [
+        {
+          "name": "turnaround",
+          "color": "#6b7280"
+        },
+        {
+          "name": "reference",
+          "color": "#06B6D4"
+        }
+      ],
+      "position": {
+        "x": 2650,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:31:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "v-char-expression": {
+      "id": "v-char-expression",
+      "parentsId": null,
+      "childrenIds": [],
+      "title": "Format: Expression Sheet",
+      "promptText": "Character expression sheet, female fantasy archer, long braided brown hair with feathers, leather armor with elven detailing. 9 emotional expressions arranged in 3x3 grid: neutral, happy, angry, sad, surprised, scared, determined, laughing, suspicious. Bust-up framing, clean lineart with flat color fills, manga-influenced style, each expression labeled.",
+      "description": "Expression reference sheet for animation or illustration consistency.",
+      "tags": [
+        {
+          "name": "expression",
+          "color": "#EC4899"
+        },
+        {
+          "name": "sheet",
+          "color": "#F59E0B"
+        }
+      ],
+      "position": {
+        "x": 2960,
+        "y": 280
+      },
+      "createdAt": "2026-05-05T10:32:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 4
+    },
+    "v-char-outfit": {
+      "id": "v-char-outfit",
+      "parentId": "root-character",
+      "childrenIds": [],
+      "title": "Format: Costume Variation Sheet",
+      "promptText": "Character costume variation sheet, female fantasy archer, athletic build, long braided brown hair with feathers. Three outfit variants side by side: (1) default forest scout leather armor, (2) winter variant with fur-lined cloak and white camouflage, (3) ceremonial variant with golden elven robes and glowing runes on bow. Full body, consistent pose, detailed fabric textures, concept art style.",
+      "description": "Costume variation sheet showing seasonal and ceremonial outfits.",
+      "tags": [
+        {
+          "name": "costume",
+          "color": "#E89558"
+        },
+        {
+          "name": "variation",
+          "color": "#07CA6B"
+        }
+      ],
+      "position": {
+        "x": 2805,
+        "y": 480
+      },
+      "createdAt": "2026-05-05T10:33:00.000Z",
+      "updatedAt": "2026-05-05T14:35:24.532Z",
+      "rating": 5
+    }
+  },
+  "rootIds": [
+    "root-portrait",
+    "root-product",
+    "root-landscape",
+    "root-character"
+  ],
+  "settings": {
+    "autoSave": true,
+    "autoSaveIntervalMs": 30000
+  }
+}
