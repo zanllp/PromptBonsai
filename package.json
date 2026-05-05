@@ -23,6 +23,16 @@
     "vue": "^3.5.33",
     "vue-i18n": "^11.4.0"
   },
+  "build": {
+    "productName": "PromptBonsai",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "artifactName": "${productName}-${version}-setup.${ext}"
+    }
+  },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@types/node": "^22.15.0",
