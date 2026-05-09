@@ -95,18 +95,16 @@ function handleKeydown(e: KeyboardEvent): void {
   gap: 6px;
   align-items: center;
   padding: 8px 10px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
+  background: var(--paper-bg);
+  border: 1px solid var(--paper-border);
+  border-radius: 8px;
   min-height: 42px;
   transition: all var(--transition-fast);
 }
 
 .tag-list:focus-within {
-  border-color: rgba(24, 86, 255, 0.5);
-  box-shadow: 0 0 0 3px rgba(24, 86, 255, 0.1);
-  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(196, 92, 58, 0.35);
+  box-shadow: 0 0 0 2px rgba(196, 92, 58, 0.06);
 }
 
 .tag-input-inline {

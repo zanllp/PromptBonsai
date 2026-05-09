@@ -13,6 +13,7 @@ export const useSettingsStore = defineStore('settings', () => {
   const showMiniMap = ref(true)
   const recentFiles = ref<RecentFile[]>([])
   const locale = ref<'zh' | 'en'>('zh')
+  const theme = ref<'ink-wash' | 'dark-glass' | 'luminous'>('ink-wash')
   const aiBaseUrl = ref('https://openrouter.ai/api/v1')
   const aiApiKey = ref('')
   const aiModel = ref('deepseek/deepseek-v4-flash')
@@ -27,6 +28,7 @@ export const useSettingsStore = defineStore('settings', () => {
         if (data.showMiniMap !== undefined) showMiniMap.value = data.showMiniMap
         if (data.recentFiles) recentFiles.value = data.recentFiles
         if (data.locale) locale.value = data.locale
+        if (data.theme) theme.value = data.theme
         if (data.aiBaseUrl) aiBaseUrl.value = data.aiBaseUrl
         if (data.aiApiKey) aiApiKey.value = data.aiApiKey
         if (data.aiModel) aiModel.value = data.aiModel
@@ -45,6 +47,7 @@ export const useSettingsStore = defineStore('settings', () => {
         showMiniMap: showMiniMap.value,
         recentFiles: recentFiles.value,
         locale: locale.value,
+        theme: theme.value,
         aiBaseUrl: aiBaseUrl.value,
         aiApiKey: aiApiKey.value,
         aiModel: aiModel.value
@@ -69,5 +72,10 @@ export const useSettingsStore = defineStore('settings', () => {
     saveToStorage()
   }
 
-  return { autoSave, autoSaveIntervalMs, showMiniMap, recentFiles, locale, aiBaseUrl, aiApiKey, aiModel, loadFromStorage, saveToStorage, addRecentFile, removeRecentFile, setLocale }
+  function setTheme(t: 'ink-wash' | 'dark-glass' | 'luminous'): void {
+    theme.value = t
+    saveToStorage()
+  }
+
+  return { autoSave, autoSaveIntervalMs, showMiniMap, recentFiles, locale, theme, aiBaseUrl, aiApiKey, aiModel, loadFromStorage, saveToStorage, addRecentFile, removeRecentFile, setLocale, setTheme }
 })

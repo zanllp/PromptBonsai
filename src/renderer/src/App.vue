@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import PromptCanvas from '@/components/canvas/PromptCanvas.vue'
 import NodeEditorPanel from '@/components/editor/NodeEditorPanel.vue'
@@ -32,6 +32,21 @@ function toggleLocale(): void {
   const next = settingsStore.locale === 'zh' ? 'en' : 'zh'
   settingsStore.setLocale(next)
 }
+
+const themes: Array<'ink-wash' | 'dark-glass' | 'luminous'> = ['ink-wash', 'dark-glass', 'luminous']
+const themeLabelsZh: Record<string, string> = { 'ink-wash': '墨', 'dark-glass': '暗', 'luminous': '光' }
+const themeLabelsEn: Record<string, string> = { 'ink-wash': 'Ink', 'dark-glass': 'Dark', 'luminous': 'Glow' }
+
+function toggleTheme(): void {
+  const idx = themes.indexOf(settingsStore.theme)
+  settingsStore.setTheme(themes[(idx + 1) % themes.length])
+}
+
+const themeUnwatch = watch(() => settingsStore.theme, (t) => {
+  document.documentElement.setAttribute('data-theme', t)
+}, { immediate: true })
+
+onUnmounted(() => themeUnwatch())
 
 // Close confirmation
 onMounted(() => {
@@ -98,6 +113,9 @@ function showToast(message: string, type: 'success' | 'error'): void {
         <button class="locale-btn" @click="toggleLocale" :aria-label="t('app.language')">
           {{ settingsStore.locale === 'zh' ? '中' : 'EN' }}
         </button>
+        <button class="locale-btn" @click="toggleTheme" :aria-label="t('app.theme')">
+          {{ settingsStore.locale === 'zh' ? themeLabelsZh[settingsStore.theme] : themeLabelsEn[settingsStore.theme] }}
+        </button>
         <span class="file-status" :class="{ dirty: fileStore.isDirty }">
           {{ fileStore.displayTitle }}
         </span>
@@ -160,8 +178,8 @@ function showToast(message: string, type: 'success' | 'error'): void {
 .app-name {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: -0.3px;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
 }
 
 .menu-actions {
@@ -175,7 +193,7 @@ function showToast(message: string, type: 'success' | 'error'): void {
   background: transparent;
   border: none;
   border-radius: 6px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-secondary);
   font-family: var(--font-primary);
   font-size: 12px;
   font-weight: 500;
@@ -184,8 +202,8 @@ function showToast(message: string, type: 'success' | 'error'): void {
 }
 
 .menu-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-text);
 }
 
 .menu-right {
@@ -196,10 +214,10 @@ function showToast(message: string, type: 'success' | 'error'): void {
 
 .locale-btn {
   padding: 2px 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  border: 1px solid var(--paper-border);
   border-radius: 6px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary);
   font-family: var(--font-primary);
   font-size: 11px;
   font-weight: 600;
@@ -209,8 +227,8 @@ function showToast(message: string, type: 'success' | 'error'): void {
 }
 
 .locale-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-text);
 }
 
 .locale-btn:focus-visible {
@@ -220,7 +238,7 @@ function showToast(message: string, type: 'success' | 'error'): void {
 
 .file-status {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-secondary);
   font-family: var(--font-mono);
 }
 
@@ -230,7 +248,8 @@ function showToast(message: string, type: 'success' | 'error'): void {
 
 .node-count {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-secondary);
+  opacity: 0.6;
 }
 
 /* Main Content */

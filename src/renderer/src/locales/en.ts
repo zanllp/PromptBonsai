@@ -33,6 +33,7 @@ export default {
     defaultTitle: 'New Prompt',
     editPrompt: 'Edit Prompt',
     close: 'Close',
+    locate: 'Locate node',
     title: 'Title',
     titlePlaceholder: 'Enter title…',
     usability: 'Rating',

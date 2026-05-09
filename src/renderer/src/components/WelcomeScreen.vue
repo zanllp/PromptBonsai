@@ -219,8 +219,8 @@ function saveSettings(): void {
   width: 88px;
   height: 88px;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(24, 86, 255, 0.18), rgba(24, 86, 255, 0.06));
-  border: 1px solid rgba(24, 86, 255, 0.22);
+  background: linear-gradient(135deg, rgba(196, 92, 58, 0.12), rgba(196, 92, 58, 0.04));
+  border: 1px solid rgba(196, 92, 58, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,14 +231,14 @@ function saveSettings(): void {
 .hero-title {
   font-size: 26px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
   margin: 0 0 8px;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
 }
 
 .hero-desc {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-secondary);
   line-height: 1.5;
 }
 
@@ -256,55 +256,52 @@ function saveSettings(): void {
   align-items: center;
   gap: 10px;
   padding: 20px 16px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: var(--paper-bg-light);
+  border: 1px solid var(--paper-border);
   cursor: pointer;
   transition: all var(--transition-normal);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-secondary);
   font-family: var(--font-primary);
 }
 
 .action-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  color: white;
+  box-shadow: var(--paper-shadow-lg);
+  color: var(--color-text);
 }
 
 .action-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: var(--paper-border-light);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .action-card:hover .action-icon {
-  background: rgba(24, 86, 255, 0.15);
+  background: rgba(196, 92, 58, 0.08);
   color: var(--color-primary);
 }
 
 .action-card--accent {
-  background: rgba(24, 86, 255, 0.08);
-  border-color: rgba(24, 86, 255, 0.15);
+  background: var(--paper-bg-heavy);
+  border-color: var(--color-primary);
 }
 
 .action-card--accent:hover {
-  background: rgba(24, 86, 255, 0.16);
-  border-color: rgba(24, 86, 255, 0.3);
+  filter: brightness(1.1);
 }
 
 .action-card--accent .action-icon {
-  background: rgba(24, 86, 255, 0.12);
   color: var(--color-primary);
 }
 
 .action-card--accent:hover .action-icon {
-  background: rgba(24, 86, 255, 0.25);
+  filter: brightness(1.2);
 }
 
 .action-label {
@@ -325,7 +322,7 @@ function saveSettings(): void {
 .settings-title {
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
@@ -335,9 +332,9 @@ function saveSettings(): void {
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
+  background: var(--paper-bg-light);
+  border: 1px solid var(--paper-border);
+  border-radius: 12px;
 }
 
 .settings-field {
@@ -349,17 +346,17 @@ function saveSettings(): void {
 .settings-label {
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-secondary);
   letter-spacing: 0.3px;
 }
 
 .settings-input {
   width: 100%;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--paper-bg);
+  border: 1px solid var(--paper-border);
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
   font-family: var(--font-mono);
   font-size: 12px;
   outline: none;
@@ -368,13 +365,12 @@ function saveSettings(): void {
 }
 
 .settings-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.25);
 }
 
 .settings-input:focus {
-  border-color: rgba(24, 86, 255, 0.4);
-  box-shadow: 0 0 0 2px rgba(24, 86, 255, 0.08);
-  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(196, 92, 58, 0.35);
+  box-shadow: 0 0 0 2px rgba(196, 92, 58, 0.06);
 }
 
 /* Recent Files */
@@ -390,7 +386,7 @@ function saveSettings(): void {
 .recent-title {
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
@@ -407,21 +403,21 @@ function saveSettings(): void {
   gap: 12px;
   width: 100%;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: left;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-secondary);
   font-family: var(--font-primary);
   position: relative;
 }
 
 .recent-item:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: white;
+  background: var(--paper-bg-light);
+  border-color: var(--paper-border);
+  color: var(--color-text);
 }
 
 .recent-item-icon {
@@ -429,7 +425,7 @@ function saveSettings(): void {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--paper-border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,7 +434,6 @@ function saveSettings(): void {
 
 .recent-item:hover .recent-item-icon {
   opacity: 0.8;
-  background: rgba(24, 86, 255, 0.1);
   color: var(--color-primary);
 }
 
@@ -460,7 +455,8 @@ function saveSettings(): void {
 
 .recent-item-meta {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-secondary);
+  opacity: 0.6;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -468,7 +464,7 @@ function saveSettings(): void {
 }
 
 .recent-item:hover .recent-item-meta {
-  color: rgba(255, 255, 255, 0.45);
+  opacity: 0.8;
 }
 
 .recent-remove {
@@ -482,7 +478,7 @@ function saveSettings(): void {
   background: transparent;
   border-radius: 6px;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: all var(--transition-fast);
   padding: 0;
@@ -493,7 +489,7 @@ function saveSettings(): void {
 }
 
 .recent-remove:hover {
-  background: rgba(234, 33, 67, 0.15);
+  background: rgba(181, 74, 74, 0.08);
   color: var(--color-danger);
 }
 
@@ -506,7 +502,8 @@ function saveSettings(): void {
 
 .hint {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-secondary);
+  opacity: 0.5;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -518,11 +515,11 @@ function saveSettings(): void {
   justify-content: center;
   padding: 2px 6px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--paper-border);
   font-family: var(--font-mono);
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-secondary);
   line-height: 1.4;
 }
 </style>

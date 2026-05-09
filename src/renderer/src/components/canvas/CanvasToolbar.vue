@@ -88,7 +88,7 @@ function handleLayout(): void {
 .toolbar-divider {
   width: 1px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--paper-border);
   margin: 0 2px;
 }
 </style>

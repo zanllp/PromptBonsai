@@ -64,8 +64,8 @@ const rightHtml = computed(() => diffHtml(segments.value, 'right'))
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,8 +106,8 @@ const rightHtml = computed(() => diffHtml(segments.value, 'right'))
 }
 
 .diff-pane {
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border: 1px solid var(--paper-border);
   overflow: hidden;
 }
 
@@ -119,8 +119,8 @@ const rightHtml = computed(() => diffHtml(segments.value, 'right'))
   font-size: 11px;
   font-weight: 600;
   color: var(--color-text-secondary);
-  background: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--paper-border-light);
 }
 
 .diff-dot {
@@ -153,15 +153,15 @@ const rightHtml = computed(() => diffHtml(segments.value, 'right'))
 }
 
 .diff-content :deep(.diff-remove) {
-  background: rgba(234, 33, 67, 0.15);
+  background: rgba(181, 74, 74, 0.1);
   color: var(--color-danger);
   border-radius: 2px;
   padding: 1px 0;
 }
 
 .diff-content :deep(.diff-add) {
-  background: rgba(7, 202, 107, 0.15);
-  color: #059669;
+  background: rgba(74, 140, 111, 0.1);
+  color: #3a7a5a;
   border-radius: 2px;
   padding: 1px 0;
 }
@@ -171,6 +171,6 @@ const rightHtml = computed(() => diffHtml(segments.value, 'right'))
   justify-content: flex-end;
   gap: 8px;
   padding: 12px 24px 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--paper-border);
 }
 </style>

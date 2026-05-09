@@ -33,6 +33,7 @@ export default {
     defaultTitle: '新提示词',
     editPrompt: '编辑提示词',
     close: '关闭',
+    locate: '定位到节点',
     title: '标题',
     titlePlaceholder: '输入标题…',
     usability: '可用性',

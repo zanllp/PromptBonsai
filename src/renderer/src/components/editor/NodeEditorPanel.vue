@@ -167,6 +167,11 @@ function closePanel(): void {
   promptStore.selectNode(null)
 }
 
+function locateNode(): void {
+  if (!node.value) return
+  promptStore.requestLocate(node.value.id)
+}
+
 function addChild(): void {
   if (!node.value) return
   const childId = promptStore.addChildNode(node.value.id, {
@@ -224,6 +229,12 @@ async function handleAiGenerate(): Promise<void> {
     <div v-if="node" class="node-editor-panel glass-editor">
       <div class="editor-header">
         <h3 class="editor-title">{{ t('node.editPrompt') }}</h3>
+        <button class="glass-btn glass-btn-icon locate-btn" @click="locateNode" :title="t('node.locate')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+          </svg>
+        </button>
         <button class="glass-btn glass-btn-icon close-btn" @click="closePanel" :title="t('node.close') + ' (Esc)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -403,7 +414,7 @@ async function handleAiGenerate(): Promise<void> {
   align-items: center;
   justify-content: space-between;
   padding: 20px 20px 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--paper-border);
 }
 
 .editor-title {
@@ -463,12 +474,12 @@ async function handleAiGenerate(): Promise<void> {
   border-radius: 8px;
   gap: 4px;
   color: var(--color-primary);
-  border-color: rgba(24, 86, 255, 0.25);
-  background: rgba(24, 86, 255, 0.08);
+  border-color: rgba(196, 92, 58, 0.25);
+  background: rgba(196, 92, 58, 0.05);
   flex-shrink: 0;
 }
 .ai-gen-btn:hover:not(:disabled) {
-  background: rgba(24, 86, 255, 0.18);
+  background: rgba(196, 92, 58, 0.12);
 }
 .ai-gen-btn:disabled {
   opacity: 0.4;
@@ -476,8 +487,8 @@ async function handleAiGenerate(): Promise<void> {
 }
 .ai-gen-btn.loading {
   color: var(--color-text-secondary);
-  border-color: rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--paper-border);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .ai-spinner {
@@ -509,30 +520,42 @@ async function handleAiGenerate(): Promise<void> {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.15);
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  color: var(--color-text-secondary);
+  opacity: 0.3;
+  transition: color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
   line-height: 1;
 }
 
 .star-btn:hover {
-  color: #fbbf24;
+  color: var(--color-warning);
+  opacity: 1;
   transform: scale(1.15);
 }
 
 .star-btn.active {
-  color: #f59e0b;
+  color: var(--color-warning);
+  opacity: 1;
+}
+
+.star-btn:hover {
+  color: var(--color-warning);
+  transform: scale(1.15);
+}
+
+.star-btn.active {
+  color: var(--color-primary);
 }
 
 .rating-text {
   font-size: 12px;
   font-weight: 500;
-  color: #f59e0b;
+  color: var(--color-primary);
 }
 
 .meta-info {
   padding: 12px;
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
   margin-top: 4px;
 }
 
@@ -560,7 +583,7 @@ async function handleAiGenerate(): Promise<void> {
   justify-content: space-between;
   gap: 8px;
   padding-top: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--paper-border);
 }
 
 .parent-diff {
@@ -583,12 +606,12 @@ async function handleAiGenerate(): Promise<void> {
 
 .parent-diff-tag--diff {
   color: var(--color-primary);
-  background: rgba(24, 86, 255, 0.1);
+  background: rgba(196, 92, 58, 0.08);
 }
 
 .parent-diff-tag--same {
   color: var(--color-text-secondary);
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .parent-diff-label {
@@ -598,9 +621,9 @@ async function handleAiGenerate(): Promise<void> {
 
 .parent-diff-inline {
   padding: 8px 10px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.015);
+  border: 1px solid var(--paper-border-light);
   font-family: var(--font-mono);
   font-size: 11.5px;
   line-height: 1.65;
@@ -612,7 +635,7 @@ async function handleAiGenerate(): Promise<void> {
 }
 
 .parent-diff-inline :deep(.diff-remove) {
-  background: rgba(234, 33, 67, 0.12);
+  background: rgba(181, 74, 74, 0.1);
   color: var(--color-danger);
   border-radius: 2px;
   padding: 1px 0;
@@ -620,8 +643,8 @@ async function handleAiGenerate(): Promise<void> {
 }
 
 .parent-diff-inline :deep(.diff-add) {
-  background: rgba(7, 202, 107, 0.12);
-  color: #059669;
+  background: rgba(74, 140, 111, 0.1);
+  color: #3a7a5a;
   border-radius: 2px;
   padding: 1px 0;
 }

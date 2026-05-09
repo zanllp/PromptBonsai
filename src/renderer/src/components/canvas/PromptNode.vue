@@ -105,7 +105,7 @@ function handleDoubleClick(): void {
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
-  background: rgba(24, 86, 255, 0.12);
+  background: rgba(196, 92, 58, 0.08);
   border-radius: 10px;
   font-size: 11px;
   font-weight: 600;
@@ -139,7 +139,7 @@ function handleDoubleClick(): void {
   display: flex;
   gap: 1px;
   margin-top: 6px;
-  color: #f59e0b;
+  color: var(--color-warning);
 }
 
 .glass-node.highlighted {
@@ -148,12 +148,12 @@ function handleDoubleClick(): void {
 
 @keyframes node-blink {
   0%, 100% {
-    box-shadow: 0 0 0 3px rgba(24, 86, 255, 0.15), 0 8px 32px rgba(24, 86, 255, 0.18);
-    border-color: rgba(24, 86, 255, 0.6);
+    box-shadow: 0 0 0 2px rgba(196, 92, 58, 0.1), 0 2px 12px rgba(196, 92, 58, 0.08);
+    border-color: rgba(196, 92, 58, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(24, 86, 255, 0.3), 0 0 24px rgba(24, 86, 255, 0.4);
-    border-color: rgba(24, 86, 255, 0.9);
+    box-shadow: 0 0 0 4px rgba(196, 92, 58, 0.2), 0 0 16px rgba(196, 92, 58, 0.15);
+    border-color: rgba(196, 92, 58, 0.8);
   }
 }
 </style>

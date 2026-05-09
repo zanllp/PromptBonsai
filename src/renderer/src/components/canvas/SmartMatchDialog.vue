@@ -97,8 +97,8 @@ function onConfirm(): void {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,9 +138,9 @@ function onConfirm(): void {
 }
 
 .smart-result {
-  border-radius: 10px;
-  border: 1px solid rgba(7, 202, 107, 0.2);
-  background: rgba(7, 202, 107, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(74, 140, 111, 0.2);
+  background: rgba(74, 140, 111, 0.04);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@ function onConfirm(): void {
   margin-left: auto;
   font-family: var(--font-mono);
   font-size: 11px;
-  background: rgba(7, 202, 107, 0.12);
+  background: rgba(74, 140, 111, 0.08);
   padding: 2px 8px;
   border-radius: 10px;
   color: var(--color-success);
@@ -191,6 +191,6 @@ function onConfirm(): void {
   color: var(--color-text-secondary);
   padding: 8px 12px;
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.02);
 }
 </style>

@@ -8,6 +8,7 @@ export const usePromptStore = defineStore('prompt', () => {
   const rootIds = ref<string[]>([])
   const selectedNodeId = ref<string | null>(null)
   const highlightedNodeId = ref<string | null>(null)
+  const locateRequestId = ref<string | null>(null)
   const fileName = ref('Untitled')
 
   const selectedNode = computed(() =>
@@ -194,6 +195,16 @@ export const usePromptStore = defineStore('prompt', () => {
     }
   }
 
+  function requestLocate(nodeId: string): void {
+    locateRequestId.value = nodeId
+  }
+
+  function consumeLocateRequest(): string | null {
+    const id = locateRequestId.value
+    locateRequestId.value = null
+    return id
+  }
+
   function toFileData(): PromptFile {
     return {
       version: 1,
@@ -223,6 +234,9 @@ export const usePromptStore = defineStore('prompt', () => {
     rootIds,
     selectedNodeId,
     highlightedNodeId,
+    locateRequestId,
+    requestLocate,
+    consumeLocateRequest,
     fileName,
     selectedNode,
     allNodesList,

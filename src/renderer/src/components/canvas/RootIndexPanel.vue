@@ -64,8 +64,8 @@ function toggle(): void {
           @click.stop="navigateTo(node)"
         >
           <span class="index-item-title">{{ node.title || t('node.untitled') }}</span>
-          <span v-if="node.childrenIds.length > 0" class="index-item-count">
-            {{ node.childrenIds.length }}
+          <span v-if="promptStore.getDescendantIds(node.id).length > 0" class="index-item-count">
+            {{ promptStore.getDescendantIds(node.id).length }}
           </span>
         </button>
       </div>
@@ -119,7 +119,7 @@ function toggle(): void {
 }
 
 .index-item:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .index-item:focus-visible {
@@ -142,7 +142,7 @@ function toggle(): void {
   min-width: 18px;
   height: 18px;
   padding: 0 5px;
-  background: rgba(24, 86, 255, 0.12);
+  background: rgba(196, 92, 58, 0.08);
   border-radius: 9px;
   font-size: 10px;
   font-weight: 600;
